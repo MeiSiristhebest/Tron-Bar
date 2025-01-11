@@ -5,12 +5,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import AnimatedSection from '@/components/AnimatedSection';
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
-
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -27,22 +21,19 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // 这里添加表单提交逻辑
-      await new Promise(resolve => setTimeout(resolve, 1000)); // 模拟API调用
-      console.log('Form submitted:', formData);
+      // 模拟表单提交
+      await new Promise(resolve => setTimeout(resolve, 1500));
       setSubmitStatus('success');
-      // 重置表单
       setFormData({
         name: '',
         email: '',
         phone: '',
         message: ''
       });
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 3000);
     }
   };
 
