@@ -225,7 +225,7 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-white p-6">地图</h2>
             <div className="absolute inset-0 top-[72px]">
               <iframe 
-                src="https://www.amap.com/search?query=创啤社(北京东直门店)Tron Taproom"
+                src="https://uri.amap.com/marker?position=116.433912,39.940969&name=创啤社(北京东直门店)Tron Taproom&src=mypage&coordinate=gaode&callnative=0"
                 width="100%" 
                 height="100%" 
                 frameBorder="0" 

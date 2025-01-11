@@ -18,7 +18,7 @@ export default function RootLayout({
 
         <footer className="bg-gray-900 text-white pt-16 pb-8 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/0 via-amber-500/5 to-gray-900/0" />
-          <div className="absolute inset-0" style={{ backgroundImage: 'url(/images/noise.png)', opacity: 0.4 }} />
+          <div className="absolute inset-0" style={{ backgroundImage: 'url(/images/noise.jpg)', opacity: 0.4 }} />
           
           <div className="container mx-auto px-4 relative">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">

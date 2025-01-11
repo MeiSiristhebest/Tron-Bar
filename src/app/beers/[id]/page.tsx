@@ -57,7 +57,7 @@ export default async function BeerDetail({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-gray-900/95 relative">
       {/* 背景装饰 */}
-      <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('/images/noise.jpg')] opacity-20 pointer-events-none" />
       
       <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         {/* 返回按钮 */}
