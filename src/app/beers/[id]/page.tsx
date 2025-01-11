@@ -5,8 +5,15 @@ import { beersData } from '@/data/beers';
 
 type BeerKeys = keyof typeof beersData;
 
+type Props = {
+  params: {
+    id: string;
+  };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
 // 生成动态元数据
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const beer = beersData[params.id as BeerKeys];
   if (!beer) {
     return {
@@ -20,7 +27,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   };
 }
 
-export default function BeerDetail({ params }: { params: { id: string } }) {
+export default function BeerDetail({ params }: Props) {
   const beer = beersData[params.id as BeerKeys];
 
   if (!beer) {
