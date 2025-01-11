@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -22,10 +23,12 @@ export default function Contact() {
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
-    } catch {
+    } catch (_) {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
+      // 3秒后重置状态
+      setTimeout(() => setSubmitStatus('idle'), 3000);
     }
   };
 

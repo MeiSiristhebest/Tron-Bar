@@ -86,7 +86,6 @@ export default function Menu() {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-gray-900" />
-          {/* Animated grain overlay */}
           <div className="absolute inset-0 opacity-20 bg-[url('/images/noise.jpg')] animate-grain" />
         </div>
         
@@ -103,7 +102,7 @@ export default function Menu() {
       {/* Menu Sections */}
       <div className="container mx-auto px-4">
         {/* Beer Categories */}
-        {beerCategories.map((category) => (
+        {beerCategories.map(category => (
           <section key={category.title} className="mb-16">
             <AnimatedSection className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-amber-200 to-amber-400">
@@ -115,7 +114,7 @@ export default function Menu() {
             </AnimatedSection>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {category.beers.map((beer) => (
+              {category.beers.map(beer => (
                 <BeerCard key={beer.id} {...beer} />
               ))}
             </div>
