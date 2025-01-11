@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import AnimatedSection from '@/components/AnimatedSection';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -27,7 +28,6 @@ export default function Contact() {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
-      // 3秒后重置状态
       setTimeout(() => setSubmitStatus('idle'), 3000);
     }
   };
