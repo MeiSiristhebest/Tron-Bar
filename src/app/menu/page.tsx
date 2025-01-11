@@ -102,29 +102,49 @@ export default function Menu() {
 
       {/* Menu Sections */}
       <div className="container mx-auto px-4">
-        {/* Beer Categories */}
-        {beerCategories.map(category => (
-          <div key={category.title} className="space-y-8">
-            <AnimatedSection>
-              <h2 className="text-3xl font-bold text-gray-900">{category.title}</h2>
-              <p className="mt-4 text-lg text-gray-600">{category.description}</p>
-            </AnimatedSection>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {category.beers.map(beer => (
-                <BeerCard
-                  key={beer.id}
-                  id={beer.id}
-                  name={beer.name}
-                  description={beer.description}
-                  abv={beer.abv}
-                  price={beer.price}
-                  imageUrl={beer.imageUrl}
-                />
-              ))}
-            </div>
+        {/* 经典精酿区域 */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-amber-500/10 px-4 py-1 rounded-full text-amber-500 text-sm font-medium mb-4">经典系列</div>
+            <h2 className="text-3xl font-bold text-white mb-4">经典精酿</h2>
+            <p className="text-gray-400">精选来自世界各地的优质精酿啤酒，每一款都经过严格筛选，只为带给您最纯正的口感体验</p>
           </div>
-        ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {beerCategories[0].beers.map(beer => (
+              <BeerCard
+                key={beer.id}
+                id={beer.id}
+                name={beer.name}
+                description={beer.description}
+                abv={beer.abv}
+                price={beer.price}
+                imageUrl={beer.imageUrl}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* 季节限定区域 */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-amber-500/10 px-4 py-1 rounded-full text-amber-500 text-sm font-medium mb-4">限定系列</div>
+            <h2 className="text-3xl font-bold text-white mb-4">季节限定</h2>
+            <p className="text-gray-400">随季节变化推出的特色精酿，限量供应，带来独特的味觉体验</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {beerCategories[1].beers.map(beer => (
+              <BeerCard
+                key={beer.id}
+                id={beer.id}
+                name={beer.name}
+                description={beer.description}
+                abv={beer.abv}
+                price={beer.price}
+                imageUrl={beer.imageUrl}
+              />
+            ))}
+          </div>
+        </div>
 
         {/* Snacks Section */}
         <section className="py-20">
