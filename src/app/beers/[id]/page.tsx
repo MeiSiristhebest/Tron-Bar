@@ -7,11 +7,10 @@ type BeerKeys = keyof typeof beersData;
 
 interface PageProps {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 // 生成动态元数据
-export async function generateMetadata({ params, searchParams }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params;
   const beer = beersData[resolvedParams.id as BeerKeys];
   if (!beer) {
@@ -26,7 +25,7 @@ export async function generateMetadata({ params, searchParams }: PageProps): Pro
   };
 }
 
-export default async function BeerDetail({ params, searchParams }: PageProps) {
+export default async function BeerDetail({ params }: PageProps) {
   const resolvedParams = await params;
   const beer = beersData[resolvedParams.id as BeerKeys];
 
