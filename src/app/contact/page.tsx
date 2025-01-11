@@ -220,25 +220,35 @@ export default function Contact() {
             </AnimatedSection>
           </div>
 
-          <AnimatedSection className="mt-12 backdrop-blur-md bg-gray-800/70 p-8 rounded-2xl shadow-xl border border-gray-700">
-            <h2 className="text-2xl font-bold text-white mb-6">地图</h2>
-            <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
+          {/* Map Section */}
+          <section className="relative w-full h-[500px] rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-white/5">
+            <h2 className="text-2xl font-bold text-white p-6">地图</h2>
+            <div className="absolute inset-0 top-[72px]">
               <iframe 
-                src="https://www.amap.com/search?query=创啤社(北京东直门店)Tron Taproom" 
+                src="https://www.amap.com/search?query=创啤社(北京东直门店)Tron Taproom"
                 width="100%" 
-                height="400" 
+                height="100%" 
                 frameBorder="0" 
-                className="rounded-xl"
-                title="创啤社地图位置"
-                allowFullScreen={true}
-              ></iframe>
+                style={{ border: 0 }} 
+                allowFullScreen
+                loading="lazy"
+                className="w-full h-full"
+              />
             </div>
-            <div className="mt-4 text-gray-300">
-              <p className="mb-2">🎯 具体位置：北京市东城区东直门南大街8号楼院1层1-5内102</p>
-              <p className="mb-2">🚇 附近地铁：东直门站（2号线、13号线、机场线）</p>
-              <p>🚌 公交站：东直门南小街站（18路、41路、75路、特12路）</p>
+            <div className="absolute bottom-0 left-0 right-0 bg-gray-900/90 backdrop-blur-sm p-4 border-t border-white/10">
+              <div className="space-y-2 text-sm">
+                <p className="flex items-center gap-2 text-white">
+                  <span>📍 具体位置：北京市东城区东直门南大街8号楼院1层1-5内102</span>
+                </p>
+                <p className="flex items-center gap-2 text-gray-400">
+                  <span>🚇 附近地铁：东直门站（2号线、13号线、机场线）</span>
+                </p>
+                <p className="flex items-center gap-2 text-gray-400">
+                  <span>🚌 公交站：东直门南小街站（18路、41路、75路、特12路）</span>
+                </p>
+              </div>
             </div>
-          </AnimatedSection>
+          </section>
         </div>
       </div>
     </main>
