@@ -1,15 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useState } from 'react';
 import Image from 'next/image';
-import AnimatedSection from '@/components/AnimatedSection';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
+import { useState } from 'react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -18,7 +10,6 @@ export default function Contact() {
     phone: '',
     message: ''
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
@@ -27,22 +18,14 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      // 这里添加表单提交逻辑
-      await new Promise(resolve => setTimeout(resolve, 1000)); // 模拟API调用
-      console.log('Form submitted:', formData);
+      // 模拟表单提交
+      await new Promise(resolve => setTimeout(resolve, 1000));
       setSubmitStatus('success');
-      // 重置表单
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
-    } catch (error) {
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
-      setTimeout(() => setSubmitStatus('idle'), 3000);
     }
   };
 
