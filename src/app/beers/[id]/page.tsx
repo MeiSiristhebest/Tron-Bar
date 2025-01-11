@@ -60,6 +60,7 @@ export default async function BeerDetail({ params }: PageProps) {
       <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-20 pointer-events-none" />
       
       <div className="relative max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        {/* 返回按钮 */}
         <Link
           href="/menu"
           className="inline-flex items-center px-6 py-3 border border-amber-500/20 text-base font-medium rounded-full text-amber-500 bg-amber-500/10 hover:bg-amber-500/20 mb-12 transition-all transform hover:scale-105 group"
@@ -69,6 +70,12 @@ export default async function BeerDetail({ params }: PageProps) {
           </svg>
           返回菜单
         </Link>
+
+        {/* 页面标题区域 */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-white mb-4">啤酒详情</h1>
+          <p className="text-gray-400 text-lg">探索精酿啤酒的独特风味与故事</p>
+        </div>
 
         {/* 主要内容区域 */}
         <div className="bg-gray-900/50 backdrop-blur-xl rounded-3xl border border-amber-500/10 overflow-hidden">
@@ -90,7 +97,8 @@ export default async function BeerDetail({ params }: PageProps) {
             {/* 详情部分 - 占据右侧8列 */}
             <div className="lg:col-span-7 p-8 lg:p-12 space-y-8">
               <div>
-                <h1 className="text-4xl font-bold text-white mb-4">{beer.name}</h1>
+                <div className="inline-block bg-amber-500/10 px-4 py-1 rounded-full text-amber-500 text-sm font-medium mb-4">特色精酿</div>
+                <h2 className="text-4xl font-bold text-white mb-4">{beer.name}</h2>
                 <div className="flex items-center gap-4 mb-6">
                   <span className="px-6 py-2 bg-amber-500/10 border border-amber-500/20 text-amber-500 rounded-full text-sm font-medium flex items-center">
                     <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -111,12 +119,10 @@ export default async function BeerDetail({ params }: PageProps) {
 
               {/* 规格参数 */}
               <div className="border-t border-amber-500/10 pt-8">
-                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                  规格参数
-                </h2>
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">规格参数</h3>
+                  <p className="text-gray-400">了解这款啤酒的详细特征</p>
+                </div>
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-amber-500/5 border border-amber-500/10 rounded-xl p-4 transform hover:scale-105 transition-transform">
                     <h3 className="font-medium text-amber-500 flex items-center mb-2">
@@ -159,12 +165,10 @@ export default async function BeerDetail({ params }: PageProps) {
 
               {/* 推荐搭配 */}
               <div className="border-t border-amber-500/10 pt-8">
-                <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <svg className="w-6 h-6 mr-3 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z" />
-                  </svg>
-                  推荐搭配
-                </h2>
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">推荐搭配</h3>
+                  <p className="text-gray-400">精心挑选的美食搭配建议</p>
+                </div>
                 <div className="grid gap-4">
                   {beer.foodPairings.map((pairing, index) => (
                     <div key={index} className="bg-amber-500/5 border border-amber-500/10 rounded-xl p-6 transform hover:scale-[1.02] transition-transform">
